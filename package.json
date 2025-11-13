@@ -1,25 +1,24 @@
 {
   "name": "egg-supplier-functions",
   "version": "1.0.0",
-  "description": "Azure Functions for EGG Supplier Database - Email and License Management",
-"scripts": {
-  "clean": "rimraf dist lib out && rimraf .tsbuildinfo",
-  "build": "tsc",
-  "watch": "tsc -w",
-  "prestart": "npm run build",
-  "start": "func start",
-  "test": "echo \"No tests yet...\""
-},
+  "description": "",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "clean": "rimraf dist",
+    "prestart": "npm run clean && npm run build",
+    "start": "func start",
+    "test": "echo \"No tests yet...\""
+  },
   "dependencies": {
-    "@azure/functions": "^4.4.0",
-    "@azure/identity": "^4.0.0",
+    "@azure/functions": "^4.8.2",
+    "@azure/identity": "^4.13.0",
     "@microsoft/microsoft-graph-client": "^3.0.7"
   },
   "devDependencies": {
-    "@types/node": "^20.0.0",
-    "typescript": "^5.0.0"
+    "@types/node": "^24.10.0",
+    "typescript": "^5.9.3",
+    "rimraf": "^6.1.0"
   },
-  "engines": {
-    "node": ">=18 <23"
-  }
+  "main": "dist/src/{index.js,functions/*.js}"
 }
